@@ -1,3 +1,5 @@
+// https://adventofcode.com/2020/day/2
+
 package main
 
 import (
@@ -26,7 +28,6 @@ func parseInput(r io.Reader) ([]policy, []string, error) {
 	for scanner.Scan() {
 		line++
 		fields := strings.Fields(scanner.Text())
-		fmt.Printf("fields = %v\n", fields)
 		if len(fields) != 3 {
 			return nil, nil, fmt.Errorf("line %d: invalid input row\n", line)
 		}
@@ -100,6 +101,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("valid passwords = %d\n", validPasswords(policies, passwords))
-	fmt.Printf("valid passwords, part 2 = %d\n", validPasswords2(policies, passwords))
+	fmt.Printf("valid passwords = %d\n", validPasswords(policies, passwords))          // 550
+	fmt.Printf("valid passwords, part 2 = %d\n", validPasswords2(policies, passwords)) // 634
 }
