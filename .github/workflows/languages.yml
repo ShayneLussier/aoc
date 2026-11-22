@@ -1,0 +1,51 @@
+name: Update language stats
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # ponytail: GitHub computes stats async, so they can lag one push behind; re-run manually if stale
+      - name: Write language badges into README
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/${{ github.repository }}/languages > /tmp/langs.json
+          python3 - <<'EOF'
+          import json, re
+          from urllib.parse import quote
+
+          langs = json.load(open("/tmp/langs.json"))
+          total = sum(langs.values())
+          colors = {"Go": "00ADD8", "Python": "3776AB", "Rust": "DEA584", "Haskell": "5E5086"}
+
+          def badge(name, size):
+              label = quote(name.replace("-", "--").replace("_", "__"))
+              pct = f"{size * 100 / total:.1f}%25"
+              return f"![](https://img.shields.io/badge/{label}-{pct}-{colors.get(name, 'grey')}?logo={quote(name.lower())})"
+
+          block = "\n".join(badge(n, s) for n, s in langs.items())
+          readme = open("README.md", encoding="utf-8").read()
+          readme = re.sub(
+              r"<!-- languages:start -->.*?<!-- languages:end -->",
+              lambda _: f"<!-- languages:start -->\n{block}\n<!-- languages:end -->",
+              readme,
+              flags=re.S,
+          )
+          open("README.md", "w", encoding="utf-8").write(readme)
+          EOF
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --quiet || (git commit -am "update language stats" && git push)

@@ -1,7 +1,9 @@
 # Advent of Code
 
-![](https://img.shields.io/github/languages/top/ShayneLussier/aoc)
-![](https://img.shields.io/github/languages/count/ShayneLussier/aoc)
+<!-- languages:start -->
+![](https://img.shields.io/badge/Go-86.9%25-00ADD8?logo=go)
+![](https://img.shields.io/badge/Python-13.1%25-3776AB?logo=python)
+<!-- languages:end -->
 
 ## 2022
 
