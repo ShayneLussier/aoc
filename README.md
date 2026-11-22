@@ -26,5 +26,5 @@
 
 ## 2019
 
-* [Day 1](https://adventofcode.com/2019/day/1): [Go](2019/go/01/main.go)
-* [Day 2](https://adventofcode.com/2019/day/2): [Go](2019/go/02/main.go)
+* [Day 1](https://adventofcode.com/2019/day/1): [Go](2019/go/01/main.go), [Python](2019/python/01/main.py)
+* [Day 2](https://adventofcode.com/2019/day/2): [Go](2019/go/02/main.go), [Python](2019/python/01/main.py)
