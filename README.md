@@ -10,6 +10,7 @@
 * [Day 1](https://adventofcode.com/2022/day/1): [Go](2022/go/01/main.go), [Python](2022/python/01/main.py)
 * [Day 2](https://adventofcode.com/2022/day/2): [Go](2022/go/02/main.go), [Python](2022/python/02/main.py)
 * [Day 3](https://adventofcode.com/2022/day/3): [Go](2022/go/03/main.go), [Python](2022/python/03/main.py)
+* [Day 4](https://adventofcode.com/2022/day/4): [Go](2022/go/04/main.go), [Python](2022/python/04/main.py)
 
 ## 2021
 
