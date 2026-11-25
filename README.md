@@ -1,8 +1,8 @@
 # Advent of Code
 
 <!-- languages:start -->
-![](https://img.shields.io/badge/Go-62.1%25-00ADD8?logo=go)
-![](https://img.shields.io/badge/Python-37.9%25-3776AB?logo=python)
+![](https://img.shields.io/badge/Go-61.0%25-00ADD8?logo=go)
+![](https://img.shields.io/badge/Python-39.0%25-3776AB?logo=python)
 <!-- languages:end -->
 
 ## 2022
