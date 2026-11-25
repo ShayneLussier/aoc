@@ -78,6 +78,6 @@ func main() {
 
 	commands := strings.Split(string(contents), "\n")
 
-	fmt.Printf("Part 1 = %d!\n", part1(dirSizes(commands))) // 1325919!
+	fmt.Printf("Part 1 = %d!\n", part1(dirSizes(commands))) // 1325919
 	fmt.Printf("Part 2 = %d!\n", part2(dirSizes(commands))) // 2050735
 }
